@@ -17,13 +17,14 @@ public class FoodSearchAppApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		OntologyExtractor.run();
 		int i = 0;
-		for (int j = 0; j < 100; j++) {
+		for (int j = 0; j < 10; j++) {
 			i++;
 			if (!SolrIndexer.run()) {
 				log.info("tentative {} échoué;Reindexation en cours...", i);
 				Thread.sleep(800);
 			}else {
 				log.info("tentative {} réussie!", i);
+				break;
 			}
 		}
 	}
