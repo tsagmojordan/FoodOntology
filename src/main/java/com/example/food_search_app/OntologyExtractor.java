@@ -12,7 +12,7 @@ import java.io.IOException;
 public class OntologyExtractor {
     public static void run() throws IOException {
         // Charger l'ontologie depuis le fichier TTL
-        Model model = RDFDataMgr.loadModel("src/main/resources/ontology.ttl");        
+        Model model = RDFDataMgr.loadModel("ontology.ttl");
         String ns = "http://www.semanticweb.org/jordan-tsagmo/ontologies/2025/4/untitled-ontology-5#";
         String rdfs = "http://www.w3.org/2000/01/rdf-schema#";
 
