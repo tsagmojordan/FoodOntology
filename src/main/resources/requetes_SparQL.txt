@@ -1,0 +1,67 @@
+# SPARQL Queries for Food and Disease Ontology
+
+# Query 1: List dishes that may prevent Colorectal Cancer
+PREFIX jordan-tsagmo: <http://www.semanticweb.org/jordan-tsagmo/ontologies/2025/4/untitled-ontology-5#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dish ?label
+WHERE {
+  ?dish jordan-tsagmo:mayPrevent jordan-tsagmo:Colorectal_Cancer .
+  ?dish rdfs:label ?label .
+}
+ORDER BY ?label
+
+# Query 2: List dishes with Tomato or Onion that prevent diseases other than Colorectal Cancer (using FILTER)
+PREFIX jordan-tsagmo: <http://www.semanticweb.org/jordan-tsagmo/ontologies/2025/4/untitled-ontology-5#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dish ?dishLabel ?ingredient ?ingredientLabel ?disease ?diseaseLabel
+WHERE {
+  ?dish jordan-tsagmo:composeOf ?ingredient .
+  ?dish rdfs:label ?dishLabel .
+  ?ingredient rdfs:label ?ingredientLabel .
+  ?dish jordan-tsagmo:mayPrevent ?disease .
+  ?disease rdfs:label ?diseaseLabel .
+  FILTER (?ingredient IN (jordan-tsagmo:Tomato, jordan-tsagmo:Onion))
+  FILTER (?disease != jordan-tsagmo:Colorectal_Cancer)
+}
+ORDER BY ?dishLabel ?diseaseLabel
+
+# Query 3: List dishes in GrandAfricanFeast buffet with their regions
+PREFIX jordan-tsagmo: <http://www.semanticweb.org/jordan-tsagmo/ontologies/2025/4/untitled-ontology-5#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dish ?dishLabel ?region ?regionLabel
+WHERE {
+  jordan-tsagmo:GrandAfricanFeast jordan-tsagmo:compose ?dish .
+  ?dish rdfs:label ?dishLabel .
+  ?dish jordan-tsagmo:belongto ?region .
+  ?region rdfs:label ?regionLabel .
+}
+ORDER BY ?dishLabel
+
+# Query 4: Get Algerian dishes with ingredients and recipes, including images if available (using OPTIONAL)
+PREFIX jordan-tsagmo: <http://www.semanticweb.org/jordan-tsagmo/ontologies/2025/4/untitled-ontology-5#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dish ?dishLabel ?ingredient ?ingredientLabel ?recipe ?recipeLabel ?image
+WHERE {
+  ?dish jordan-tsagmo:belongto jordan-tsagmo:Algeria .
+  ?dish rdfs:label ?dishLabel .
+  ?dish jordan-tsagmo:composeOf ?ingredient .
+  ?ingredient rdfs:label ?ingredientLabel .
+  ?dish jordan-tsagmo:hasrecipe ?recipe .
+  ?recipe rdfs:label ?recipeLabel .
+  OPTIONAL { ?dish jordan-tsagmo:hasImage ?image . }
+}
+ORDER BY ?dishLabel ?ingredientLabel
+
+# Query 5: Identify diseases with their symptoms and preventions
+PREFIX jordan-tsagmo: <http://www.semanticweb.org/jordan-tsagmo/ontologies/2025/4/untitled-ontology-5#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?disease ?diseaseLabel ?symptom ?symptomLabel ?prevention ?preventionLabel
+WHERE {
+  ?disease a jordan-tsagmo:Disease .
+  ?disease rdfs:label ?diseaseLabel .
+  ?disease jordan-tsagmo:has_symptom ?symptom .
+  ?symptom rdfs:label ?symptomLabel .
+  ?disease jordan-tsagmo:has_prevention ?prevention .
+  ?prevention rdfs:label ?preventionLabel .
+}
+ORDER BY ?diseaseLabel ?symptomLabel

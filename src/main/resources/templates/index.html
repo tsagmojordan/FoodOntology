@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Découvrez des plats authentiques avec recettes, origines et bienfaits santé."/>
+    <meta name="keywords" content="cuisine, recettes, plats, santé, recherche"/>
+    <meta name="author" content="Votre Nom"/>
+    <title>Mangez saint - Vivez saint</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0A0A0A;
+            color: #FFFFFF;
+        }
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+        }
+        /* Images */
+        .food-image {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #3B82F6;
+            transition: transform 0.3s ease;
+        }
+        .food-image:hover {
+            transform: scale(1.1);
+        }
+        /* Header */
+        .header {
+            background-color: #1E3A8A;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        /* Footer */
+        .footer {
+            background-color: #1E3A8A;
+        }
+        /* Champ de recherche */
+        .search-input {
+            background-color: #0A0A0A;
+            border: 2px solid #3B82F6;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .search-input:focus {
+            border-color: #60A5FA;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+            outline: none;
+        }
+        /* Boutons */
+        .btn-primary {
+            background-color: #3B82F6;
+            color: #FFFFFF;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #2563EB;
+            transform: translateY(-2px);
+        }
+        /* Résultats */
+        .result-card {
+            background-color: #1E1E1E;
+            border: 2px solid #3B82F6;
+            border-radius: 16px;
+        }
+        .label {
+            color: #3B82F6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header text-white">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-utensils text-2xl text-blue-400"></i>
+                <a href="/" class="text-2xl font-bold">Saveurs du Monde</a>
+            </div>
+            <div class="flex space-x-6">
+                <a href="/" class="hover:text-blue-400 transition flex items-center">
+                    <i class="fas fa-home mr-1"></i> Accueil
+                </a>
+                <a href="/about" class="hover:text-blue-400 transition flex items-center">
+                    <i class="fas fa-info-circle mr-1"></i> À propos
+                </a>
+                <a href="/contact" class="hover:text-blue-400 transition flex items-center">
+                    <i class="fas fa-envelope mr-1"></i> Contact
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Recherche -->
+    <section class="bg-blue-900 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold text-white mb-6 fade-in">Explorez les Saveurs du Monde</h1>
+            <p class="text-lg text-blue-200 mb-8">Trouvez des plats, leurs recettes, origines et bienfaits santé.</p>
+            <form method="post" action="/search" class="flex justify-center items-center max-w-2xl mx-auto">
+                <div class="relative w-full">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-400"></i>
+                    <input type="text"
+                           name="query"
+                           th:value="${query}"
+                           placeholder="Ex: Chicken Relish, Obesity, Tomato"
+                           class="w-full p-4 pl-12 text-lg search-input text-white rounded-full focus:border-blue-400"
+                           aria-label="Rechercher des plats"/>
+                </div>
+                <button type="submit"
+                        class="ml-4 px-8 py-4 btn-primary font-semibold rounded-full flex items-center">
+                    <i class="fas fa-search mr-2"></i> Rechercher
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section Résultats -->
+    <section class="container mx-auto px-6 py-12">
+        <h2 th:if="${results != null and not #lists.isEmpty(results)}"
+            class="text-3xl font-bold text-white mb-8 text-center fade-in">Résultats de la recherche</h2>
+        <div th:each="result : ${results}" class="result-card p-6 mb-6 hover-scale fade-in">
+            <h3 class="text-2xl font-semibold text-white mb-4" th:text="${result.name}"></h3>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <p class="mb-3"><strong class="label">Ingrédients :</strong> <span th:text="${result.ingredients}"></span></p>
+                    <p class="mb-3"><strong class="label">Composants :</strong> <span th:text="${result.components}"></span></p>
+                    <p class="mb-3"><strong class="label">Recette :</strong> <span th:text="${result.recipe}"></span></p>
+                    <p class="mb-3"><strong class="label">Région :</strong> <span th:text="${result.region}"></span></p>
+                    <p class="mb-3"><strong class="label">Bienfaits :</strong> <span th:text="${result.preventedDiseases}"></span></p>
+                </div>
+                <div th:if="${result.images}" class="flex flex-col items-center gap-4">
+                    <div th:each="image : ${result.images}">
+                        <img th:src="${image}"
+                             th:alt="${result.name}"
+                             class="food-image"
+                             onerror="this.src='https://via.placeholder.com/180';"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p th:if="${results == null or #lists.isEmpty(results)}"
+           class="text-center text-blue-200 text-lg fade-in">Aucun plat trouvé. Essayez une autre recherche.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Saveurs du Monde</h3>
+                    <p class="text-blue-200">Découvrez des recettes authentiques et leurs bienfaits pour la santé.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Liens</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about" class="text-blue-200 hover:text-blue-400 transition">À propos</a></li>
+                        <li><a href="/contact" class="text-blue-200 hover:text-blue-400 transition">Contact</a></li>
+                        <li><a href="/privacy" class="text-blue-200 hover:text-blue-400 transition">Confidentialité</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                    <p class="text-blue-200">Email : jordantsagmo@gmail.com</p>
+                    <p class="text-blue-200">Tél : +1237 686 68 38 88</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-blue-200 hover:text-blue-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-200 hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-blue-200">
+                <p>© 2025 Saveurs du Monde. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

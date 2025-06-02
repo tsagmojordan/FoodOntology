@@ -1,0 +1,586 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix jordan-tsagmo: <http://www.semanticweb.org/jordan-tsagmo/ontologies/2025/4/untitled-ontology-5#> .
+
+# New Object Property for Prevention
+jordan-tsagmo:mayPrevent rdf:type owl:ObjectProperty ;
+    rdfs:domain jordan-tsagmo:Dish ;
+    rdfs:range jordan-tsagmo:Disease ;
+    rdfs:label "may prevent" ;
+    rdfs:comment "Indicates that a dish may help prevent a specific disease due to its nutritional content." .
+
+# Ingredients Instances
+jordan-tsagmo:Chicken rdf:type jordan-tsagmo:RawFood ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat ;
+    rdfs:label "Chicken" .
+
+jordan-tsagmo:Fish rdf:type jordan-tsagmo:RawFood ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat ;
+    rdfs:label "Fish" .
+
+jordan-tsagmo:Liver rdf:type jordan-tsagmo:RawFood ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Liver" .
+
+jordan-tsagmo:Egg rdf:type jordan-tsagmo:RawFood ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat ;
+    rdfs:label "Egg" .
+
+jordan-tsagmo:Lamb rdf:type jordan-tsagmo:RawFood ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat ;
+    rdfs:label "Lamb" .
+
+jordan-tsagmo:Beef rdf:type jordan-tsagmo:RawFood ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat ;
+    rdfs:label "Beef" .
+
+jordan-tsagmo:Tomato rdf:type jordan-tsagmo:Vegetables ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Tomato" .
+
+jordan-tsagmo:Onion rdf:type jordan-tsagmo:Vegetables ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Onion" .
+
+jordan-tsagmo:Garlic rdf:type jordan-tsagmo:Vegetables ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Garlic" .
+
+jordan-tsagmo:Chili rdf:type jordan-tsagmo:Vegetables ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Chili" .
+
+jordan-tsagmo:Oil rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Fat ;
+    rdfs:label "Oil" .
+
+jordan-tsagmo:Flour rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate ;
+    rdfs:label "Flour" .
+
+jordan-tsagmo:Semolina rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate ;
+    rdfs:label "Semolina" .
+
+jordan-tsagmo:PhylloDough rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Fat ;
+    rdfs:label "Phyllo Dough" .
+
+jordan-tsagmo:CoconutMilk rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Fat , jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Coconut Milk" .
+
+jordan-tsagmo:Nuts rdf:type jordan-tsagmo:RawFood ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Fat , jordan-tsagmo:Protein , jordan-tsagmo:Fiber ;
+    rdfs:label "Nuts" .
+
+jordan-tsagmo:Honey rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Honey" .
+
+jordan-tsagmo:Butter rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Fat ;
+    rdfs:label "Butter" .
+
+jordan-tsagmo:Sugar rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate ;
+    rdfs:label "Sugar" .
+
+jordan-tsagmo:Yeast rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Yeast" .
+
+jordan-tsagmo:SesameSeeds rdf:type jordan-tsagmo:RawFood ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Sesame Seeds" .
+
+jordan-tsagmo:Spices rdf:type jordan-tsagmo:Ingredient ;
+    jordan-tsagmo:composedOf jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Spices" .
+
+# Nutritional Components
+jordan-tsagmo:Protein rdf:type jordan-tsagmo:MacroNutrient ;
+    rdfs:label "Protein" .
+
+jordan-tsagmo:Fat rdf:type jordan-tsagmo:MacroNutrient ;
+    rdfs:label "Fat" .
+
+jordan-tsagmo:Carbohydrate rdf:type jordan-tsagmo:MacroNutrient ;
+    rdfs:label "Carbohydrate" .
+
+jordan-tsagmo:Fiber rdf:type jordan-tsagmo:Fiber ;
+    rdfs:label "Fiber" .
+
+jordan-tsagmo:MicroNutrient rdf:type jordan-tsagmo:MicroNutrient ;
+    rdfs:label "Micro Nutrient" .
+
+# Delocalized Areas
+jordan-tsagmo:Africa rdf:type jordan-tsagmo:DelocalizedArea ;
+    rdfs:label "Africa" .
+
+jordan-tsagmo:CoastalAfrica rdf:type jordan-tsagmo:DelocalizedArea ;
+    rdfs:label "Coastal Africa" .
+
+jordan-tsagmo:Algeria rdf:type jordan-tsagmo:DelocalizedArea ;
+    rdfs:label "Algeria" .
+
+jordan-tsagmo:NorthAfrica rdf:type jordan-tsagmo:DelocalizedArea ;
+    rdfs:label "North Africa" .
+
+# Disease Instances
+jordan-tsagmo:Breast_Cancer rdf:type jordan-tsagmo:Cancer ;
+    jordan-tsagmo:has_symptom jordan-tsagmo:Lump_in_breast , jordan-tsagmo:Breast_shape_change ;
+    jordan-tsagmo:has_prevention jordan-tsagmo:High_fiber_diet , jordan-tsagmo:Limit_processed_foods , jordan-tsagmo:Regular_exercise ;
+    jordan-tsagmo:has_treatment jordan-tsagmo:Chemotherapy , jordan-tsagmo:Lumpectomy ;
+    rdfs:label "Breast Cancer" .
+
+jordan-tsagmo:Colorectal_Cancer rdf:type jordan-tsagmo:Cancer ;
+    jordan-tsagmo:has_symptom jordan-tsagmo:Blood_in_stool , jordan-tsagmo:Abdominal_pain ;
+    jordan-tsagmo:has_prevention jordan-tsagmo:High_fiber_diet , jordan-tsagmo:Limit_red_meat , jordan-tsagmo:Regular_screening ;
+    jordan-tsagmo:has_treatment jordan-tsagmo:Surgery , jordan-tsagmo:Chemotherapy ;
+    rdfs:label "Colorectal Cancer" .
+
+jordan-tsagmo:Obesity rdf:type jordan-tsagmo:Disease ;
+    jordan-tsagmo:has_symptom jordan-tsagmo:Excess_body_fat , jordan-tsagmo:Fatigue ;
+    jordan-tsagmo:has_prevention jordan-tsagmo:Balanced_diet , jordan-tsagmo:Limit_sugary_foods , jordan-tsagmo:Regular_exercise ;
+    jordan-tsagmo:has_treatment jordan-tsagmo:Dietary_counseling , jordan-tsagmo:Weight_loss_program ;
+    rdfs:label "Obesity" .
+
+jordan-tsagmo:Type_2_Diabetes rdf:type jordan-tsagmo:Disease ;
+    jordan-tsagmo:has_symptom jordan-tsagmo:Increased_thirst , jordan-tsagmo:Frequent_urination ;
+    jordan-tsagmo:has_prevention jordan-tsagmo:Balanced_diet , jordan-tsagmo:Limit_sugary_foods , jordan-tsagmo:Regular_exercise ;
+    jordan-tsagmo:has_treatment jordan-tsagmo:Insulin_therapy , jordan-tsagmo:Dietary_management ;
+    rdfs:label "Type 2 Diabetes" .
+
+# Symptoms Instances
+jordan-tsagmo:Lump_in_breast rdf:type jordan-tsagmo:Symptoms ;
+    rdfs:label "Lump in breast or underarm" .
+
+jordan-tsagmo:Breast_shape_change rdf:type jordan-tsagmo:Symptoms ;
+    rdfs:label "Change in breast shape or size" .
+
+jordan-tsagmo:Blood_in_stool rdf:type jordan-tsagmo:Symptoms ;
+    rdfs:label "Blood in stool" .
+
+jordan-tsagmo:Abdominal_pain rdf:type jordan-tsagmo:Symptoms ;
+    rdfs:label "Abdominal pain" .
+
+jordan-tsagmo:Excess_body_fat rdf:type jordan-tsagmo:Symptoms ;
+    rdfs:label "Excess body fat" .
+
+jordan-tsagmo:Fatigue rdf:type jordan-tsagmo:Symptoms ;
+    rdfs:label "Fatigue" .
+
+jordan-tsagmo:Increased_thirst rdf:type jordan-tsagmo:Symptoms ;
+    rdfs:label "Increased thirst" .
+
+jordan-tsagmo:Frequent_urination rdf:type jordan-tsagmo:Symptoms ;
+    rdfs:label "Frequent urination" .
+
+# Prevention Instances
+jordan-tsagmo:High_fiber_diet rdf:type jordan-tsagmo:Prevention ;
+    rdfs:label "High fiber diet" .
+
+jordan-tsagmo:Limit_processed_foods rdf:type jordan-tsagmo:Prevention ;
+    rdfs:label "Limit processed foods" .
+
+jordan-tsagmo:Regular_exercise rdf:type jordan-tsagmo:Prevention ;
+    rdfs:label "Regular exercise" .
+
+jordan-tsagmo:Limit_red_meat rdf:type jordan-tsagmo:Prevention ;
+    rdfs:label "Limit red meat consumption" .
+
+jordan-tsagmo:Regular_screening rdf:type jordan-tsagmo:Prevention ;
+    rdfs:label "Regular colorectal screening" .
+
+jordan-tsagmo:Balanced_diet rdf:type jordan-tsagmo:Prevention ;
+    rdfs:label "Balanced diet" .
+
+jordan-tsagmo:Limit_sugary_foods rdf:type jordan-tsagmo:Prevention ;
+    rdfs:label "Limit sugary foods" .
+
+# Treatment Instances
+jordan-tsagmo:Chemotherapy rdf:type jordan-tsagmo:TreatmentProtocol ;
+    rdfs:label "Chemotherapy" .
+
+jordan-tsagmo:Lumpectomy rdf:type jordan-tsagmo:TreatmentProtocol ;
+    rdfs:label "Lumpectomy" .
+
+jordan-tsagmo:Surgery rdf:type jordan-tsagmo:TreatmentProtocol ;
+    rdfs:label "Surgery" .
+
+jordan-tsagmo:Dietary_counseling rdf:type jordan-tsagmo:TreatmentProtocol ;
+    rdfs:label "Dietary counseling" .
+
+jordan-tsagmo:Weight_loss_program rdf:type jordan-tsagmo:TreatmentProtocol ;
+    rdfs:label "Weight loss program" .
+
+jordan-tsagmo:Insulin_therapy rdf:type jordan-tsagmo:TreatmentProtocol ;
+    rdfs:label "Insulin therapy" .
+
+jordan-tsagmo:Dietary_management rdf:type jordan-tsagmo:TreatmentProtocol ;
+    rdfs:label "Dietary management" .
+
+# Person Instances
+jordan-tsagmo:Amina rdf:type jordan-tsagmo:Person ;
+    jordan-tsagmo:has_disease jordan-tsagmo:Breast_Cancer ;
+    rdfs:label "Amina" ;
+    rdfs:comment "Amina consumes a diet high in fried foods like FriedChicken and Zlabia, which may increase health risks." .
+
+jordan-tsagmo:Karim rdf:type jordan-tsagmo:Person ;
+    jordan-tsagmo:has_disease jordan-tsagmo:Obesity ;
+    rdfs:label "Karim" ;
+    rdfs:comment "Karim frequently eats sugary dishes like Baklawa and Griwech, contributing to obesity." .
+
+jordan-tsagmo:Lila rdf:type jordan-tsagmo:Person ;
+    jordan-tsagmo:has_disease jordan-tsagmo:Type_2_Diabetes ;
+    rdfs:label "Lila" ;
+    rdfs:comment "Lila's diet includes high-sugar foods like Zlabia and Tcharek, increasing diabetes risk." .
+
+jordan-tsagmo:Omar rdf:type jordan-tsagmo:Person ;
+    jordan-tsagmo:has_disease jordan-tsagmo:Colorectal_Cancer ;
+    rdfs:label "Omar" ;
+    rdfs:comment "Omar consumes red meat dishes like Mechoui regularly, which may contribute to colorectal cancer risk." .
+
+# Dish Instances
+jordan-tsagmo:ChickenBoiledRoasted rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Chicken , jordan-tsagmo:Spices , jordan-tsagmo:Garlic ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:ChickenBoiledRoastedRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/chicken_boiled_roasted.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Obesity , jordan-tsagmo:Type_2_Diabetes ;
+    rdfs:label "Chicken Boiled or Roasted" .
+
+jordan-tsagmo:ChickenBoiledRoastedRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Chicken Boiled or Roasted Recipe" ;
+    rdfs:comment "Rub chicken with spices and garlic, boil for 45 minutes or roast at 190°C for 1.5 hours until golden." .
+
+jordan-tsagmo:ChickenRelishWithoutOil rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Chicken , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Spices , jordan-tsagmo:Chili ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:ChickenRelishWithoutOilRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/chicken_relish_no_oil.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Breast_Cancer , jordan-tsagmo:Colorectal_Cancer , jordan-tsagmo:Obesity ;
+    rdfs:label "Chicken Relish Without Oil" .
+
+jordan-tsagmo:ChickenRelishWithoutOilRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Chicken Relish Without Oil Recipe" ;
+    rdfs:comment "Simmer chicken with tomatoes, onions, chili, and spices in a pot for 35 minutes, stirring occasionally." .
+
+jordan-tsagmo:ChickenRelishCoconutMilk rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Chicken , jordan-tsagmo:CoconutMilk , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Garlic ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:CoastalAfrica ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:ChickenRelishCoconutMilkRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/chicken_relish_coconut.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Breast_Cancer ;
+    rdfs:label "Chicken Relish with Coconut Milk" .
+
+jordan-tsagmo:ChickenRelishCoconutMilkRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Chicken Relish with Coconut Milk Recipe" ;
+    rdfs:comment "Cook chicken with coconut milk, tomatoes, onions, and garlic for 30 minutes to create a creamy stew." .
+
+jordan-tsagmo:ChickenRelishWithOil rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Chicken , jordan-tsagmo:Oil , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Spices ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:ChickenRelishWithOilRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/chicken_relish_oil.jpg"^^xsd:anyURI ;
+    rdfs:label "Chicken Relish with Oil" .
+
+jordan-tsagmo:ChickenRelishWithOilRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Chicken Relish with Oil Recipe" ;
+    rdfs:comment "Sauté chicken in oil with tomatoes, onions, and spices for 35 minutes until tender." .
+
+jordan-tsagmo:FriedChicken rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Chicken , jordan-tsagmo:Oil , jordan-tsagmo:Flour , jordan-tsagmo:Spices , jordan-tsagmo:Garlic ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Carbohydrate , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:FriedChickenRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/fried_chicken.jpg"^^xsd:anyURI ;
+    rdfs:label "Chicken, Fried" .
+
+jordan-tsagmo:FriedChickenRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Fried Chicken Recipe" ;
+    rdfs:comment "Coat chicken with flour, spices, and garlic paste, then fry in hot oil for 15-20 minutes until crispy." .
+
+jordan-tsagmo:EggBoiled rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Egg ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:EggBoiledRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/egg_boiled.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Obesity , jordan-tsagmo:Type_2_Diabetes ;
+    rdfs:label "Egg Boiled" .
+
+jordan-tsagmo:EggBoiledRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Egg Boiled Recipe" ;
+    rdfs:comment "Place eggs in boiling water for 10-12 minutes, then cool in cold water." .
+
+jordan-tsagmo:EggFried rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Egg , jordan-tsagmo:Oil , jordan-tsagmo:Spices ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:EggFriedRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/egg_fried.jpg"^^xsd:anyURI ;
+    rdfs:label "Egg, Fried" .
+
+jordan-tsagmo:EggFriedRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Egg Fried Recipe" ;
+    rdfs:comment "Crack eggs into hot oil, sprinkle with spices, and fry for 3-5 minutes until edges are crispy." .
+
+jordan-tsagmo:FishFreshStew rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Fish , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Spices , jordan-tsagmo:Garlic ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:FishFreshStewRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/fish_fresh_stew.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Breast_Cancer , jordan-tsagmo:Colorectal_Cancer ;
+    rdfs:label "Fish, Fresh, Stew" .
+
+jordan-tsagmo:FishFreshStewRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Fish Fresh Stew Recipe" ;
+    rdfs:comment "Cook fresh fish with tomatoes, onions, garlic, and spices in a pot for 25 minutes to create a rich stew." .
+
+jordan-tsagmo:FishRelishWithoutOil rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Fish , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Spices , jordan-tsagmo:Chili ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:FishRelishWithoutOilRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/fish_relish_no_oil.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Breast_Cancer , jordan-tsagmo:Colorectal_Cancer , jordan-tsagmo:Obesity ;
+    rdfs:label "Fish Relish Without Oil" .
+
+jordan-tsagmo:FishRelishWithoutOilRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Fish Relish Without Oil Recipe" ;
+    rdfs:comment "Simmer fish with tomatoes, onions, chili, and spices for 20 minutes for a light, spicy relish." .
+
+jordan-tsagmo:FishRelishCoconutMilk rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Fish , jordan-tsagmo:CoconutMilk , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Garlic ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:CoastalAfrica ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:FishRelishCoconutMilkRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/fish_relish_coconut.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Breast_Cancer ;
+    rdfs:label "Fish Relish with Coconut Milk" .
+
+jordan-tsagmo:FishRelishCoconutMilkRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Fish Relish with Coconut Milk Recipe" ;
+    rdfs:comment "Cook fish with coconut milk, tomatoes, onions, and garlic for 25 minutes for a creamy coastal dish." .
+
+jordan-tsagmo:FishRelishWithOil rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Fish , jordan-tsagmo:Oil , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Spices ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:FishRelishWithOilRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/fish_relish_oil.jpg"^^xsd:anyURI ;
+    rdfs:label "Fish Relish with Oil" .
+
+jordan-tsagmo:FishRelishWithOilRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Fish Relish with Oil Recipe" ;
+    rdfs:comment "Sauté fish in oil with tomatoes, onions, and spices for 20 minutes until flavorful." .
+
+jordan-tsagmo:FishFried rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Fish , jordan-tsagmo:Oil , jordan-tsagmo:Flour , jordan-tsagmo:Spices ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Carbohydrate , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:FishFriedRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/fish_fried.jpg"^^xsd:anyURI ;
+    rdfs:label "Fish, Fried" .
+
+jordan-tsagmo:FishFriedRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Fish Fried Recipe" ;
+    rdfs:comment "Coat fish in flour and spices, fry in hot oil for 10-12 minutes until golden and crispy." .
+
+jordan-tsagmo:FishFriedRelish rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Fish , jordan-tsagmo:Oil , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Chili ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:FishFriedRelishRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/fish_fried_relish.jpg"^^xsd:anyURI ;
+    rdfs:label "Fish Fried Relish" .
+
+jordan-tsagmo:FishFriedRelishRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Fish Fried Relish Recipe" ;
+    rdfs:comment "Fry fish in oil, then simmer with tomatoes, onions, and chili for 15 minutes for a spicy relish." .
+
+jordan-tsagmo:LiverRelish rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Liver , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Spices , jordan-tsagmo:Garlic ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:LiverRelishRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/liver_relish.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Breast_Cancer ;
+    rdfs:label "Liver Relish" .
+
+jordan-tsagmo:LiverRelishRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Liver Relish Recipe" ;
+    rdfs:comment "Cook liver with tomatoes, onions, garlic, and spices for 20 minutes to make a savory relish." .
+
+jordan-tsagmo:LiverFried rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Liver , jordan-tsagmo:Oil , jordan-tsagmo:Spices , jordan-tsagmo:Garlic ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Africa ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:LiverFriedRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/liver_fried.jpg"^^xsd:anyURI ;
+    rdfs:label "Liver, Fried" .
+
+jordan-tsagmo:LiverFriedRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Liver Fried Recipe" ;
+    rdfs:comment "Season liver with spices and garlic, fry in oil for 10-12 minutes until crispy outside." .
+
+jordan-tsagmo:Mechoui rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Lamb , jordan-tsagmo:Spices , jordan-tsagmo:Oil , jordan-tsagmo:Garlic ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Algeria ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:MechouiRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/mechoui.jpg"^^xsd:anyURI ;
+    rdfs:label "Mechoui" .
+
+jordan-tsagmo:MechouiRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Mechoui Recipe" ;
+    rdfs:comment "Marinate lamb with spices, garlic, and oil, then slow-roast over an open fire for 4 hours." .
+
+jordan-tsagmo:Bourek rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:PhylloDough , jordan-tsagmo:Beef , jordan-tsagmo:Onion , jordan-tsagmo:Egg , jordan-tsagmo:Spices ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Algeria ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:BourekRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/bourek.jpg"^^xsd:anyURI ;
+    rdfs:label "Bourek" .
+
+jordan-tsagmo:BourekRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Bourek Recipe" ;
+    rdfs:comment "Mix cooked beef, onions, egg, and spices, wrap in phyllo dough, and fry for 8-10 minutes until golden." .
+
+jordan-tsagmo:Samsa rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:PhylloDough , jordan-tsagmo:Nuts , jordan-tsagmo:Honey , jordan-tsagmo:Butter , jordan-tsagmo:SesameSeeds ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Fat , jordan-tsagmo:Protein , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Algeria ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:SamsaRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/samsa.jpg"^^xsd:anyURI ;
+    rdfs:label "Samsa" .
+
+jordan-tsagmo:SamsaRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Samsa Recipe" ;
+    rdfs:comment "Fill phyllo dough with crushed nuts and butter, bake for 20 minutes, then drizzle with honey and sesame seeds." .
+
+jordan-tsagmo:Tcharek rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Flour , jordan-tsagmo:Nuts , jordan-tsagmo:Honey , jordan-tsagmo:Butter , jordan-tsagmo:Sugar ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Fat , jordan-tsagmo:Protein , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Algeria ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:TcharekRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/tcharek.jpg"^^xsd:anyURI ;
+    rdfs:label "Tcharek" .
+
+jordan-tsagmo:TcharekRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Tcharek Recipe" ;
+    rdfs:comment "Shape flour dough with nuts, butter, and sugar, bake for 25 minutes, then coat with warm honey." .
+
+jordan-tsagmo:Griwech rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Flour , jordan-tsagmo:Honey , jordan-tsagmo:Oil , jordan-tsagmo:SesameSeeds , jordan-tsagmo:Butter ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Algeria ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:GriwechRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/griwech.jpg"^^xsd:anyURI ;
+    rdfs:label "Griwech" .
+
+jordan-tsagmo:GriwechRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Griwech Recipe" ;
+    rdfs:comment "Knead flour with butter, shape into intricate twists, fry in oil, then coat with honey and sesame seeds." .
+
+jordan-tsagmo:Chekhchoukha rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Semolina , jordan-tsagmo:Lamb , jordan-tsagmo:Tomato , jordan-tsagmo:Onion , jordan-tsagmo:Spices ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Protein , jordan-tsagmo:Fat , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Algeria ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:ChekhchoukhaRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/chekhchoukha.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Colorectal_Cancer , jordan-tsagmo:Obesity ;
+    rdfs:label "Chekhchoukha" .
+
+jordan-tsagmo:ChekhchoukhaRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Chekhchoukha Recipe" ;
+    rdfs:comment "Prepare semolina flatbread, cook lamb with tomatoes, onions, and spices, then layer and serve hot." .
+
+jordan-tsagmo:Baklawa rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:PhylloDough , jordan-tsagmo:Nuts , jordan-tsagmo:Honey , jordan-tsagmo:Butter , jordan-tsagmo:Sugar ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Fat , jordan-tsagmo:Protein , jordan-tsagmo:Fiber , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:NorthAfrica ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:BaklawaRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/baklawa.jpg"^^xsd:anyURI ;
+    rdfs:label "Baklawa" .
+
+jordan-tsagmo:BaklawaRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Baklawa Recipe" ;
+    rdfs:comment "Layer phyllo dough with nuts and butter, bake for 30 minutes, then soak in honey-sugar syrup." .
+
+jordan-tsagmo:Zviti rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Semolina , jordan-tsagmo:Tomato , jordan-tsagmo:Spices , jordan-tsagmo:Oil , jordan-tsagmo:Chili ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Fiber , jordan-tsagmo:Fat , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Algeria ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:ZvitiRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/zviti.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Colorectal_Cancer , jordan-tsagmo:Obesity ;
+    rdfs:label "Zviti" .
+
+jordan-tsagmo:ZvitiRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Zviti Recipe" ;
+    rdfs:comment "Mix semolina with tomatoes, chili, spices, and oil, cook into a thick, spicy paste for 15 minutes." .
+
+jordan-tsagmo:Zlabia rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Flour , jordan-tsagmo:Sugar , jordan-tsagmo:Oil , jordan-tsagmo:Yeast , jordan-tsagmo:Honey ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Fat , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:NorthAfrica ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:ZlabiaRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/zlabia.jpg"^^xsd:anyURI ;
+    rdfs:label "Zlabia" .
+
+jordan-tsagmo:ZlabiaRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Zlabia Recipe" ;
+    rdfs:comment "Mix flour, sugar, and yeast into a batter, pipe into hot oil, fry until crispy, then soak in honey syrup." .
+
+jordan-tsagmo:Mhajab rdf:type jordan-tsagmo:Dish ;
+    jordan-tsagmo:composeOf jordan-tsagmo:Flour , jordan-tsagmo:Onion , jordan-tsagmo:Tomato , jordan-tsagmo:Spices , jordan-tsagmo:Oil ;
+    jordan-tsagmo:composedOf jordan-tsagmo:Carbohydrate , jordan-tsagmo:Fiber , jordan-tsagmo:Fat , jordan-tsagmo:MicroNutrient ;
+    jordan-tsagmo:belongto jordan-tsagmo:Algeria ;
+    jordan-tsagmo:hasrecipe jordan-tsagmo:MhajabRecipe ;
+    jordan-tsagmo:hasImage "https://example.com/images/mhajab.jpg"^^xsd:anyURI ;
+    jordan-tsagmo:mayPrevent jordan-tsagmo:Colorectal_Cancer , jordan-tsagmo:Obesity ;
+    rdfs:label "Mhajab" .
+
+jordan-tsagmo:MhajabRecipe rdf:type jordan-tsagmo:Recipe ;
+    rdfs:label "Mhajab Recipe" ;
+    rdfs:comment "Prepare flour dough, fill with spiced onions and tomatoes, fold into squares, and cook on a griddle for 10 minutes." .
+
+# Buffet Instance
+jordan-tsagmo:GrandAfricanFeast rdf:type jordan-tsagmo:Buffet ;
+    jordan-tsagmo:compose jordan-tsagmo:ChickenBoiledRoasted ,
+                          jordan-tsagmo:ChickenRelishWithoutOil ,
+                          jordan-tsagmo:ChickenRelishCoconutMilk ,
+                          jordan-tsagmo:ChickenRelishWithOil ,
+                          jordan-tsagmo:FriedChicken ,
+                          jordan-tsagmo:EggBoiled ,
+                          jordan-tsagmo:EggFried ,
+                          jordan-tsagmo:FishFreshStew ,
+                          jordan-tsagmo:FishRelishWithoutOil ,
+                          jordan-tsagmo:FishRelishCoconutMilk ,
+                          jordan-tsagmo:FishRelishWithOil ,
+                          jordan-tsagmo:FishFried ,
+                          jordan-tsagmo:FishFriedRelish ,
+                          jordan-tsagmo:LiverRelish ,
+                          jordan-tsagmo:LiverFried ,
+                          jordan-tsagmo:Mechoui ,
+                          jordan-tsagmo:Bourek ,
+                          jordan-tsagmo:Samsa ,
+                          jordan-tsagmo:Tcharek ,
+                          jordan-tsagmo:Griwech ,
+                          jordan-tsagmo:Chekhchoukha ,
+                          jordan-tsagmo:Baklawa ,
+                          jordan-tsagmo:Zviti ,
+                          jordan-tsagmo:Zlabia ,
+                          jordan-tsagmo:Mhajab ;
+    rdfs:label "Grand African Feast" .

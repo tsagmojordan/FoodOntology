@@ -1,0 +1,511 @@
+[
+  {
+    "components": [
+      "Protein",
+      "Fat",
+      "Micro Nutrient"
+    ],
+    "images": ["https://example.com/images/chicken_boiled_roasted.jpg"],
+    "name": "Chicken Boiled or Roasted",
+    "recipe": "Rub chicken with spices and garlic, boil for 45 minutes or roast at 190°C for 1.5 hours until golden.",
+    "ingredients": [
+      "Chicken",
+      "Spices",
+      "Garlic"
+    ],
+    "preventedDiseases": [
+      "Type 2 Diabetes",
+      "Obesity"
+    ],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Fat",
+      "Carbohydrate",
+      "Micro Nutrient",
+      "Fiber"
+    ],
+    "images": ["https://example.com/images/mhajab.jpg"],
+    "name": "Mhajab",
+    "recipe": "Prepare flour dough, fill with spiced onions and tomatoes, fold into squares, and cook on a griddle for 10 minutes.",
+    "ingredients": [
+      "Flour",
+      "Onion",
+      "Spices",
+      "Tomato",
+      "Oil"
+    ],
+    "preventedDiseases": [
+      "Colorectal Cancer",
+      "Obesity"
+    ],
+    "region": "Algeria"
+  },
+  {
+    "components": [
+      "Fat",
+      "Micro Nutrient",
+      "Fiber",
+      "Protein"
+    ],
+    "images": ["https://example.com/images/fish_relish_coconut.jpg"],
+    "name": "Fish Relish with Coconut Milk",
+    "recipe": "Cook fish with coconut milk, tomatoes, onions, and garlic for 25 minutes for a creamy coastal dish.",
+    "ingredients": [
+      "Fish",
+      "Garlic",
+      "Tomato",
+      "Onion",
+      "Coconut Milk"
+    ],
+    "preventedDiseases": ["Breast Cancer"],
+    "region": "Coastal Africa"
+  },
+  {
+    "components": [
+      "Fiber",
+      "Fat",
+      "Micro Nutrient",
+      "Protein",
+      "Carbohydrate"
+    ],
+    "images": ["https://example.com/images/chekhchoukha.jpg"],
+    "name": "Chekhchoukha",
+    "recipe": "Prepare semolina flatbread, cook lamb with tomatoes, onions, and spices, then layer and serve hot.",
+    "ingredients": [
+      "Lamb",
+      "Spices",
+      "Onion",
+      "Tomato",
+      "Semolina"
+    ],
+    "preventedDiseases": [
+      "Obesity",
+      "Colorectal Cancer"
+    ],
+    "region": "Algeria"
+  },
+  {
+    "components": [
+      "Protein",
+      "Fiber",
+      "Micro Nutrient"
+    ],
+    "images": ["https://example.com/images/chicken_relish_no_oil.jpg"],
+    "name": "Chicken Relish Without Oil",
+    "recipe": "Simmer chicken with tomatoes, onions, chili, and spices in a pot for 35 minutes, stirring occasionally.",
+    "ingredients": [
+      "Chicken",
+      "Chili",
+      "Onion",
+      "Tomato",
+      "Spices"
+    ],
+    "preventedDiseases": [
+      "Obesity",
+      "Colorectal Cancer",
+      "Breast Cancer"
+    ],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Micro Nutrient",
+      "Protein",
+      "Fat"
+    ],
+    "images": ["https://example.com/images/liver_fried.jpg"],
+    "name": "Liver, Fried",
+    "recipe": "Season liver with spices and garlic, fry in oil for 10-12 minutes until crispy outside.",
+    "ingredients": [
+      "Garlic",
+      "Liver",
+      "Spices",
+      "Oil"
+    ],
+    "preventedDiseases": [],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Protein",
+      "Micro Nutrient",
+      "Fiber",
+      "Fat"
+    ],
+    "images": ["https://example.com/images/fish_relish_oil.jpg"],
+    "name": "Fish Relish with Oil",
+    "recipe": "Sauté fish in oil with tomatoes, onions, and spices for 20 minutes until flavorful.",
+    "ingredients": [
+      "Oil",
+      "Onion",
+      "Fish",
+      "Tomato",
+      "Spices"
+    ],
+    "preventedDiseases": [],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Protein",
+      "Micro Nutrient",
+      "Fiber"
+    ],
+    "images": ["https://example.com/images/fish_relish_no_oil.jpg"],
+    "name": "Fish Relish Without Oil",
+    "recipe": "Simmer fish with tomatoes, onions, chili, and spices for 20 minutes for a light, spicy relish.",
+    "ingredients": [
+      "Fish",
+      "Onion",
+      "Spices",
+      "Chili",
+      "Tomato"
+    ],
+    "preventedDiseases": [
+      "Obesity",
+      "Breast Cancer",
+      "Colorectal Cancer"
+    ],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Carbohydrate",
+      "Protein",
+      "Fiber",
+      "Fat",
+      "Micro Nutrient"
+    ],
+    "images": ["https://example.com/images/bourek.jpg"],
+    "name": "Bourek",
+    "recipe": "Mix cooked beef, onions, egg, and spices, wrap in phyllo dough, and fry for 8-10 minutes until golden.",
+    "ingredients": [
+      "Beef",
+      "Spices",
+      "Phyllo Dough",
+      "Onion",
+      "Egg"
+    ],
+    "preventedDiseases": [],
+    "region": "Algeria"
+  },
+  {
+    "components": [
+      "Protein",
+      "Fat",
+      "Micro Nutrient"
+    ],
+    "images": ["https://example.com/images/mechoui.jpg"],
+    "name": "Mechoui",
+    "recipe": "Marinate lamb with spices, garlic, and oil, then slow-roast over an open fire for 4 hours.",
+    "ingredients": [
+      "Spices",
+      "Oil",
+      "Garlic",
+      "Lamb"
+    ],
+    "preventedDiseases": [],
+    "region": "Algeria"
+  },
+  {
+    "components": [
+      "Protein",
+      "Fat"
+    ],
+    "images": ["https://example.com/images/egg_boiled.jpg"],
+    "name": "Egg Boiled",
+    "recipe": "Place eggs in boiling water for 10-12 minutes, then cool in cold water.",
+    "ingredients": ["Egg"],
+    "preventedDiseases": [
+      "Obesity",
+      "Type 2 Diabetes"
+    ],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Fat",
+      "Protein",
+      "Micro Nutrient",
+      "Fiber"
+    ],
+    "images": ["https://example.com/images/chicken_relish_coconut.jpg"],
+    "name": "Chicken Relish with Coconut Milk",
+    "recipe": "Cook chicken with coconut milk, tomatoes, onions, and garlic for 30 minutes to create a creamy stew.",
+    "ingredients": [
+      "Garlic",
+      "Onion",
+      "Tomato",
+      "Chicken",
+      "Coconut Milk"
+    ],
+    "preventedDiseases": ["Breast Cancer"],
+    "region": "Coastal Africa"
+  },
+  {
+    "components": [
+      "Fat",
+      "Protein",
+      "Micro Nutrient",
+      "Fiber"
+    ],
+    "images": ["https://example.com/images/liver_relish.jpg"],
+    "name": "Liver Relish",
+    "recipe": "Cook liver with tomatoes, onions, garlic, and spices for 20 minutes to make a savory relish.",
+    "ingredients": [
+      "Onion",
+      "Tomato",
+      "Garlic",
+      "Liver",
+      "Spices"
+    ],
+    "preventedDiseases": ["Breast Cancer"],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Fat",
+      "Protein",
+      "Micro Nutrient",
+      "Carbohydrate"
+    ],
+    "images": ["https://example.com/images/fish_fried.jpg"],
+    "name": "Fish, Fried",
+    "recipe": "Coat fish in flour and spices, fry in hot oil for 10-12 minutes until golden and crispy.",
+    "ingredients": [
+      "Flour",
+      "Spices",
+      "Fish",
+      "Oil"
+    ],
+    "preventedDiseases": [],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Carbohydrate",
+      "Fat",
+      "Micro Nutrient",
+      "Fiber"
+    ],
+    "images": ["https://example.com/images/zviti.jpg"],
+    "name": "Zviti",
+    "recipe": "Mix semolina with tomatoes, chili, spices, and oil, cook into a thick, spicy paste for 15 minutes.",
+    "ingredients": [
+      "Oil",
+      "Semolina",
+      "Spices",
+      "Chili",
+      "Tomato"
+    ],
+    "preventedDiseases": [
+      "Obesity",
+      "Colorectal Cancer"
+    ],
+    "region": "Algeria"
+  },
+  {
+    "components": [
+      "Protein",
+      "Fat",
+      "Micro Nutrient",
+      "Fiber",
+      "Carbohydrate"
+    ],
+    "images": ["https://example.com/images/baklawa.jpg"],
+    "name": "Baklawa",
+    "recipe": "Layer phyllo dough with nuts and butter, bake for 30 minutes, then soak in honey-sugar syrup.",
+    "ingredients": [
+      "Honey",
+      "Butter",
+      "Phyllo Dough",
+      "Sugar",
+      "Nuts"
+    ],
+    "preventedDiseases": [],
+    "region": "North Africa"
+  },
+  {
+    "components": [
+      "Protein",
+      "Fiber",
+      "Carbohydrate",
+      "Fat",
+      "Micro Nutrient"
+    ],
+    "images": ["https://example.com/images/tcharek.jpg"],
+    "name": "Tcharek",
+    "recipe": "Shape flour dough with nuts, butter, and sugar, bake for 25 minutes, then coat with warm honey.",
+    "ingredients": [
+      "Sugar",
+      "Butter",
+      "Nuts",
+      "Honey",
+      "Flour"
+    ],
+    "preventedDiseases": [],
+    "region": "Algeria"
+  },
+  {
+    "components": [
+      "Micro Nutrient",
+      "Carbohydrate",
+      "Protein",
+      "Fat"
+    ],
+    "images": ["https://example.com/images/fried_chicken.jpg"],
+    "name": "Chicken, Fried",
+    "recipe": "Coat chicken with flour, spices, and garlic paste, then fry in hot oil for 15-20 minutes until crispy.",
+    "ingredients": [
+      "Spices",
+      "Flour",
+      "Oil",
+      "Chicken",
+      "Garlic"
+    ],
+    "preventedDiseases": [],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Fat",
+      "Fiber",
+      "Protein",
+      "Micro Nutrient"
+    ],
+    "images": ["https://example.com/images/chicken_relish_oil.jpg"],
+    "name": "Chicken Relish with Oil",
+    "recipe": "Sauté chicken in oil with tomatoes, onions, and spices for 35 minutes until tender.",
+    "ingredients": [
+      "Spices",
+      "Onion",
+      "Oil",
+      "Chicken",
+      "Tomato"
+    ],
+    "preventedDiseases": [],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Micro Nutrient",
+      "Protein",
+      "Fiber",
+      "Fat"
+    ],
+    "images": ["https://example.com/images/fish_fresh_stew.jpg"],
+    "name": "Fish, Fresh, Stew",
+    "recipe": "Cook fresh fish with tomatoes, onions, garlic, and spices in a pot for 25 minutes to create a rich stew.",
+    "ingredients": [
+      "Spices",
+      "Garlic",
+      "Tomato",
+      "Onion",
+      "Fish"
+    ],
+    "preventedDiseases": [
+      "Breast Cancer",
+      "Colorectal Cancer"
+    ],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Fat",
+      "Carbohydrate",
+      "Fiber",
+      "Micro Nutrient"
+    ],
+    "images": ["https://example.com/images/griwech.jpg"],
+    "name": "Griwech",
+    "recipe": "Knead flour with butter, shape into intricate twists, fry in oil, then coat with honey and sesame seeds.",
+    "ingredients": [
+      "Sesame Seeds",
+      "Flour",
+      "Oil",
+      "Honey",
+      "Butter"
+    ],
+    "preventedDiseases": [],
+    "region": "Algeria"
+  },
+  {
+    "components": [
+      "Fat",
+      "Micro Nutrient",
+      "Protein"
+    ],
+    "images": ["https://example.com/images/egg_fried.jpg"],
+    "name": "Egg, Fried",
+    "recipe": "Crack eggs into hot oil, sprinkle with spices, and fry for 3-5 minutes until edges are crispy.",
+    "ingredients": [
+      "Oil",
+      "Egg",
+      "Spices"
+    ],
+    "preventedDiseases": [],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Protein",
+      "Fiber",
+      "Micro Nutrient",
+      "Fat"
+    ],
+    "images": ["https://example.com/images/fish_fried_relish.jpg"],
+    "name": "Fish Fried Relish",
+    "recipe": "Fry fish in oil, then simmer with tomatoes, onions, and chili for 15 minutes for a spicy relish.",
+    "ingredients": [
+      "Chili",
+      "Tomato",
+      "Fish",
+      "Onion",
+      "Oil"
+    ],
+    "preventedDiseases": [],
+    "region": "Africa"
+  },
+  {
+    "components": [
+      "Protein",
+      "Micro Nutrient",
+      "Fat",
+      "Carbohydrate",
+      "Fiber"
+    ],
+    "images": ["https://example.com/images/samsa.jpg"],
+    "name": "Samsa",
+    "recipe": "Fill phyllo dough with crushed nuts and butter, bake for 20 minutes, then drizzle with honey and sesame seeds.",
+    "ingredients": [
+      "Butter",
+      "Sesame Seeds",
+      "Phyllo Dough",
+      "Honey",
+      "Nuts"
+    ],
+    "preventedDiseases": [],
+    "region": "Algeria"
+  },
+  {
+    "components": [
+      "Fat",
+      "Micro Nutrient",
+      "Carbohydrate"
+    ],
+    "images": ["https://example.com/images/zlabia.jpg"],
+    "name": "Zlabia",
+    "recipe": "Mix flour, sugar, and yeast into a batter, pipe into hot oil, fry until crispy, then soak in honey syrup.",
+    "ingredients": [
+      "Yeast",
+      "Sugar",
+      "Honey",
+      "Oil",
+      "Flour"
+    ],
+    "preventedDiseases": [],
+    "region": "North Africa"
+  }
+]
